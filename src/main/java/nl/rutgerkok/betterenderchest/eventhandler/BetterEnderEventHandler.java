@@ -90,7 +90,7 @@ public class BetterEnderEventHandler implements Listener {
         if (!player.hasPermission("betterenderchest.user.destroy")) {
             // Player cannot break Ender Chests, cancel event
             event.setCancelled(true);
-            player.sendMessage("" + ChatColor.RED + Translations.NO_PERMISSION);
+            //player.sendMessage("" + ChatColor.RED + Translations.NO_PERMISSION);
             return;
         }
 
@@ -110,7 +110,7 @@ public class BetterEnderEventHandler implements Listener {
         Player player = event.getPlayer();
         if (!player.hasPermission("betterenderchest.user.place")) {
             event.setCancelled(true);
-            player.sendMessage("" + ChatColor.RED + Translations.NO_PERMISSION);
+            //player.sendMessage("" + ChatColor.RED + Translations.NO_PERMISSION);
         }
     }
 
@@ -142,10 +142,10 @@ public class BetterEnderEventHandler implements Listener {
             BetterEnderInventoryHolder holder = (BetterEnderInventoryHolder) event.getInventory().getHolder();
             if (holder.getChestOwner().isPublicChest()) {
                 if (!Translations.PUBLIC_CHEST_CLOSE_MESSAGE.isEmpty()) {
-                    player.sendMessage(Translations.PUBLIC_CHEST_CLOSE_MESSAGE.toString());
+                    //player.sendMessage(Translations.PUBLIC_CHEST_CLOSE_MESSAGE.toString());
                 }
             } else if (holder.getChestOwner().isDefaultChest()) {
-                player.sendMessage(Translations.EVENT_HANDLER_DEFAULT_EDITET.toString());
+                //player.sendMessage(Translations.EVENT_HANDLER_DEFAULT_EDITET.toString());
             }
         }
     }
@@ -174,7 +174,7 @@ public class BetterEnderEventHandler implements Listener {
                 if (player.hasPermission("betterenderchest.user.open.publicchest")) {
                     chestOwner = plugin.getChestOwners().publicChest();
                 } else {
-                    player.sendMessage("" + ChatColor.RED + Translations.NO_PERMISSION);
+                    //player.sendMessage("" + ChatColor.RED + Translations.NO_PERMISSION);
                     return;
                 }
             } else {
@@ -183,7 +183,7 @@ public class BetterEnderEventHandler implements Listener {
                     Player owner = getVanillaEnderChestOwner(event.getInventory(), player);
                     chestOwner = plugin.getChestOwners().playerChest(owner);
                 } else {
-                    player.sendMessage("" + ChatColor.RED + Translations.NO_PERMISSION);
+                    //player.sendMessage("" + ChatColor.RED + Translations.NO_PERMISSION);
                     return;
                 }
             }
@@ -226,7 +226,7 @@ public class BetterEnderEventHandler implements Listener {
         // Are the chests enabled?
         if (!plugin.canSaveAndLoad()) {
             // Send message and put something in the console
-            player.sendMessage(ChatColor.RED + Translations.ENDER_CHESTS_DISABLED.toString());
+            //player.sendMessage(ChatColor.RED + Translations.ENDER_CHESTS_DISABLED.toString());
             plugin.printSaveAndLoadError();
             return;
         }
@@ -235,7 +235,7 @@ public class BetterEnderEventHandler implements Listener {
         try {
             chestOpener.getBlockInventory(player, block, chestOpener.showAnimatedInventory(player, block));
         } catch (NoPermissionException e) {
-            player.sendMessage(ChatColor.RED + Translations.NO_PERMISSION.toString());
+            //player.sendMessage(ChatColor.RED + Translations.NO_PERMISSION.toString());
         } catch (ChestProtectedException e) {
             return;
         }

@@ -281,7 +281,7 @@ public class BetterEnderSlotsHandler implements Listener {
     private void sendInvalidItemMessage(HumanEntity humanEntity) {
         String message = Translations.ITEM_NOT_ALLOWED.toString();
         if (message.length() > 0) {
-            humanEntity.sendMessage(ChatColor.YELLOW + message);
+            //humanEntity.sendMessage(ChatColor.YELLOW + message);
         }
     }
 

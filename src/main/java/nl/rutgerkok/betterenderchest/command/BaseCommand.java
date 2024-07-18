@@ -139,7 +139,7 @@ public abstract class BaseCommand implements Registration {
         }, new Consumer<InvalidOwnerException>() {
             @Override
             public void consume(InvalidOwnerException t) {
-                sender.sendMessage(ChatColor.RED + Translations.PLAYER_NOT_SEEN_ON_SERVER.toString(inventoryName));
+                //sender.sendMessager(ChatColor.RED + Translations.PLAYER_NOT_SEEN_ON_SERVER.toString(inventoryName));
             }
         });
     }

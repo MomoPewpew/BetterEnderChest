@@ -49,7 +49,7 @@ public class BetterEnderUtils {
         for (HumanEntity player : viewers) {
             player.closeInventory(); // Removes them from inventory.getViewers()
             if (player instanceof Player) {
-                ((Player) player).sendMessage(message);
+                //((Player) player).sendMessage(message);
             }
         }
     }
@@ -131,7 +131,7 @@ public class BetterEnderUtils {
                 }
             }
             if (droppedCount > 0) {
-                player.sendMessage(ChatColor.YELLOW + Translations.OVERFLOWING_CHEST_CLOSE.toString());
+                //player.sendMessage(ChatColor.YELLOW + Translations.OVERFLOWING_CHEST_CLOSE.toString());
                 plugin.log("There were items in disabled slots in the Ender Chest of " + chestOwner.getDisplayName() + ". Demoted? Glitch? Hacking? " + droppedCount + " stacks are ejected.");
             }
         }

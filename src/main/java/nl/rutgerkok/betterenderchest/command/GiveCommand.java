@@ -83,7 +83,7 @@ public class GiveCommand extends BaseCommand {
         // Group
         WorldGroup group = getGroup(args[0], sender);
         if (group == null) {
-            sender.sendMessage(ChatColor.RED + Translations.GROUP_NOT_FOUND.toString(args[0]));
+            //sender.sendMessager(ChatColor.RED + Translations.GROUP_NOT_FOUND.toString(args[0]));
         }
 
         String materialAndCount = Joiner.on(' ').join(Arrays.asList(args).subList(1, args.length));
@@ -95,8 +95,8 @@ public class GiveCommand extends BaseCommand {
         String countString = null;
         if (startBrace == -1) {
             if (endBrace != -1) {
-                sender.sendMessage(
-                        ChatColor.RED + Translations.GIVE_FAILED_READ_MATERIAL_AMOUNT_EXTRA_BRACE.toString(materialAndCount));
+                //sender.sendMessager(
+                //        ChatColor.RED + Translations.GIVE_FAILED_READ_MATERIAL_AMOUNT_EXTRA_BRACE.toString(materialAndCount));
                 return true;
             }
             materialName = args[1];
@@ -105,8 +105,8 @@ public class GiveCommand extends BaseCommand {
             }
         } else {
             if (endBrace == -1) {
-                sender.sendMessage(
-                        ChatColor.RED + Translations.GIVE_FAILED_READ_MATERIAL_AMOUNT_MISSING_BRACE.toString(materialAndCount));
+                //sender.sendMessager(
+                //        ChatColor.RED + Translations.GIVE_FAILED_READ_MATERIAL_AMOUNT_MISSING_BRACE.toString(materialAndCount));
                 return true;
             }
             materialName = materialAndCount.substring(0, startBrace);
@@ -119,7 +119,7 @@ public class GiveCommand extends BaseCommand {
         // Material
         Material material = MaterialParser.matchMaterial(materialName);
         if (material == null) {
-            sender.sendMessage("" + ChatColor.RED + Translations.GIVE_INVALID_MATERIAL.toString(args[1]));
+            //sender.sendMessager("" + ChatColor.RED + Translations.GIVE_INVALID_MATERIAL.toString(args[1]));
             return true;
         }
 
@@ -129,11 +129,11 @@ public class GiveCommand extends BaseCommand {
             try {
                 count = Integer.parseInt(countString);
                 if (count > MAX_COUNT) {
-                    sender.sendMessage(ChatColor.RED + Translations.GIVE_AMOUNT_CAPPED.toString(MAX_COUNT));
+                    //sender.sendMessager(ChatColor.RED + Translations.GIVE_AMOUNT_CAPPED.toString(MAX_COUNT));
                     count = MAX_COUNT;
                 }
             } catch (NumberFormatException e) {
-                sender.sendMessage("" + ChatColor.RED + countString + " " + Translations.GIVE_INVALID_AMOUNT.toString());
+                //sender.sendMessager("" + ChatColor.RED + countString + " " + Translations.GIVE_INVALID_AMOUNT.toString());
                 return true;
             }
         }
@@ -148,7 +148,7 @@ public class GiveCommand extends BaseCommand {
             try {
                 stack = addNBT(stack, nbt);
             } catch (Throwable t) {
-                sender.sendMessage(ChatColor.RED + Translations.GIVE_FAILED_SET_NBT_TAG.toString(ChatColor.WHITE + nbt + ChatColor.RED));
+                //sender.sendMessager(ChatColor.RED + Translations.GIVE_FAILED_SET_NBT_TAG.toString(ChatColor.WHITE + nbt + ChatColor.RED));
                 return true;
             }
         }
@@ -177,23 +177,23 @@ public class GiveCommand extends BaseCommand {
     private void sendItemAddedMessage(CommandSender sender, String inventoryName, int totalAmount, int remainingAmount) {
         if (remainingAmount == 0) {
             if (totalAmount == 1) {
-                sender.sendMessage(Translations.GIVE_ITEM_ADDED_SINGLE.toString(inventoryName));
+                //sender.sendMessager(Translations.GIVE_ITEM_ADDED_SINGLE.toString(inventoryName));
             } else {
-                sender.sendMessage(Translations.GIVE_ITEM_ADDED_MULTIPLE.toString(inventoryName));
+                //sender.sendMessager(Translations.GIVE_ITEM_ADDED_MULTIPLE.toString(inventoryName));
             }
         } else if (remainingAmount == totalAmount) {
             // None added
             if (totalAmount == 1) {
-                sender.sendMessage(ChatColor.RED + Translations.GIVE_ITEM_NOT_ADDED_SINGLE_FULL.toString(inventoryName));
+                //sender.sendMessager(ChatColor.RED + Translations.GIVE_ITEM_NOT_ADDED_SINGLE_FULL.toString(inventoryName));
             } else {
-                sender.sendMessage(ChatColor.RED + Translations.GIVE_ITEMS_NOT_ADDED_FULL.toString(inventoryName));
+                //sender.sendMessager(ChatColor.RED + Translations.GIVE_ITEMS_NOT_ADDED_FULL.toString(inventoryName));
             }
         } else {
             // Some added
             if (remainingAmount == 1) {
-                sender.sendMessage(ChatColor.RED + Translations.GIVE_ITEM_NOT_ADDED_SINGLE.toString(inventoryName));
+                //sender.sendMessager(ChatColor.RED + Translations.GIVE_ITEM_NOT_ADDED_SINGLE.toString(inventoryName));
             } else {
-                sender.sendMessage(ChatColor.RED + Translations.GIVE_ITEMS_NOT_ADDED.toString(remainingAmount, inventoryName));
+                //sender.sendMessager(ChatColor.RED + Translations.GIVE_ITEMS_NOT_ADDED.toString(remainingAmount, inventoryName));
             }
         }
     }

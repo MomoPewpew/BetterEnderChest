@@ -13,8 +13,8 @@ public class ListCommand extends BaseCommand {
 
     @Override
     public boolean execute(CommandSender sender, String[] args) {
-        sender.sendMessage(Translations.LIST_COMMAND_MESSAGE.toString());
-        sender.sendMessage(plugin.getChestCache().toString());
+        //sender.sendMessager(Translations.LIST_COMMAND_MESSAGE.toString());
+        //sender.sendMessager(plugin.getChestCache().toString());
         return true;
     }
 

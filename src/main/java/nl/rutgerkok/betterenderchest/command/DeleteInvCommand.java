@@ -37,7 +37,7 @@ public class DeleteInvCommand extends BaseCommand {
         // Get group
         WorldGroup group = getGroup(args[0], sender);
         if (group == null) {
-            sender.sendMessage(ChatColor.RED + Translations.GROUP_NOT_FOUND.toString(args[0]));
+            //sender.sendMessager(ChatColor.RED + Translations.GROUP_NOT_FOUND.toString(args[0]));
             return true;
         }
 
@@ -50,7 +50,7 @@ public class DeleteInvCommand extends BaseCommand {
 
                 // Clear it.
                 inventory.clear();
-                sender.sendMessage(ChatColor.GREEN + Translations.DELETE_INV_SUCCESSFULLY_REMOVED_INVENTORY.toString());
+                //sender.sendMessager(ChatColor.GREEN + Translations.DELETE_INV_SUCCESSFULLY_REMOVED_INVENTORY.toString());
             }
         });
         return true;

@@ -30,11 +30,11 @@ public class SwapInvCommand extends BaseCommand {
 
         // Check groups
         if (group1 == null) {
-            sender.sendMessage(ChatColor.RED + Translations.SWAP_INV_GROUP_NOT_FOUND.toString(args[0]));
+            //sender.sendMessager(ChatColor.RED + Translations.SWAP_INV_GROUP_NOT_FOUND.toString(args[0]));
             return true;
         }
         if (group2 == null) {
-            sender.sendMessage(ChatColor.RED + Translations.SWAP_INV_GROUP_NOT_FOUND.toString(args[1]));
+            //sender.sendMessager(ChatColor.RED + Translations.SWAP_INV_GROUP_NOT_FOUND.toString(args[1]));
             return true;
         }
 
@@ -91,7 +91,7 @@ public class SwapInvCommand extends BaseCommand {
         plugin.getChestCache().setInventory(newInv2);
 
         // Show a message
-        sender.sendMessage(ChatColor.GREEN + Translations.SWAP_INV_SUCCESS_MESSAGE.toString());
+        //sender.sendMessager(ChatColor.GREEN + Translations.SWAP_INV_SUCCESS_MESSAGE.toString());
     }
 }
 

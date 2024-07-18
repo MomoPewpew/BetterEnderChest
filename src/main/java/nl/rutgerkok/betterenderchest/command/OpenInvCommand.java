@@ -30,12 +30,12 @@ public class OpenInvCommand extends BaseCommand {
     @Override
     public boolean execute(CommandSender sender, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage(ChatColor.RED + Translations.CONSOLE_ERROR.toString());
+            //sender.sendMessager(ChatColor.RED + Translations.CONSOLE_ERROR.toString());
             return true;
         }
 
         if (!plugin.canSaveAndLoad()) {
-            sender.sendMessage(ChatColor.RED + Translations.ENDER_CHESTS_DISABLED.toString());
+            //sender.sendMessager(ChatColor.RED + Translations.ENDER_CHESTS_DISABLED.toString());
             plugin.printSaveAndLoadError();
             return true;
         }
@@ -59,7 +59,7 @@ public class OpenInvCommand extends BaseCommand {
 
             // Check for permissions
             if (!player.hasPermission("betterenderchest.command.openinv")) {
-                sender.sendMessage(ChatColor.RED + Translations.CAN_ONLY_OPEN_OWN_CHEST.toString());
+                //sender.sendMessager(ChatColor.RED + Translations.CAN_ONLY_OPEN_OWN_CHEST.toString());
                 return true;
             }
 
@@ -69,7 +69,7 @@ public class OpenInvCommand extends BaseCommand {
 
             if (group == null) {
                 // Show error
-                sender.sendMessage(ChatColor.RED + Translations.GROUP_NOT_FOUND.toString());
+                //sender.sendMessager(ChatColor.RED + Translations.GROUP_NOT_FOUND.toString());
                 return true;
             }
 

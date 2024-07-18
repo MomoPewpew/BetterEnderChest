@@ -42,9 +42,9 @@ public class EnderChestCommand implements TabExecutor {
 
             // No permission for both commands
             if (sender.hasPermission("betterenderchest.command.openinv.self") || sender.hasPermission("betterenderchest.command.viewinv.self")) {
-                sender.sendMessage(ChatColor.RED + Translations.CAN_ONLY_OPEN_OWN_CHEST.toString());
+                //sender.sendMessager(ChatColor.RED + Translations.CAN_ONLY_OPEN_OWN_CHEST.toString());
             } else {
-                sender.sendMessage(ChatColor.RED + Translations.NO_PERMISSION.toString());
+                //sender.sendMessager(ChatColor.RED + Translations.NO_PERMISSION.toString());
             }
             return true;
         }
@@ -64,7 +64,7 @@ public class EnderChestCommand implements TabExecutor {
             }
 
             // No permission for both commands
-            sender.sendMessage(ChatColor.RED + Translations.NO_PERMISSION.toString());
+            //sender.sendMessager(ChatColor.RED + Translations.NO_PERMISSION.toString());
 
             return true;
         }

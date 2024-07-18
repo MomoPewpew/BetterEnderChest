@@ -602,7 +602,7 @@ public class BetterEnderChestPlugin extends JavaPlugin implements BetterEnderChe
             // Close all player inventories
             if (player.getOpenInventory().getTopInventory().getHolder() instanceof BetterEnderInventoryHolder) {
                 player.closeInventory();
-                player.sendMessage(ChatColor.YELLOW + "An admin reloaded all Ender Chests!");
+                //player.sendMessage(ChatColor.YELLOW + "An admin reloaded all Ender Chests!");
             }
         }
 

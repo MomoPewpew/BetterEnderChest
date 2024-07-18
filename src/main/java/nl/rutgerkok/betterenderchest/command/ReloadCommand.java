@@ -16,7 +16,7 @@ public class ReloadCommand extends BaseCommand {
     @Override
     public boolean execute(CommandSender sender, String[] args) {
 
-        sender.sendMessage(ChatColor.YELLOW + Translations.RELOAD_SAVING_INVENTORIES.toString());
+        //sender.sendMessager(ChatColor.YELLOW + Translations.RELOAD_SAVING_INVENTORIES.toString());
 
         // Reloading
         plugin.reload();
@@ -26,7 +26,7 @@ public class ReloadCommand extends BaseCommand {
 
         // Print message if it's a player
         if (sender instanceof Player) {
-            sender.sendMessage(ChatColor.YELLOW + Translations.RELOAD_CONFIG_AND_CHESTS_RELOADED.toString());
+            //sender.sendMessager(ChatColor.YELLOW + Translations.RELOAD_CONFIG_AND_CHESTS_RELOADED.toString());
         }
 
         return true;
